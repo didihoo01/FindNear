@@ -1,0 +1,824 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17711FBB21CFA683008CF0BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FBA21CFA683008CF0BC /* AppDelegate.swift */; };
+		17711FC021CFA683008CF0BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17711FBE21CFA683008CF0BC /* Main.storyboard */; };
+		17711FC221CFA685008CF0BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17711FC121CFA685008CF0BC /* Assets.xcassets */; };
+		17711FC521CFA685008CF0BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17711FC321CFA685008CF0BC /* LaunchScreen.storyboard */; };
+		17711FD021CFA685008CF0BC /* Find_NearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FCF21CFA685008CF0BC /* Find_NearTests.swift */; };
+		17711FDB21CFA685008CF0BC /* Find_NearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FDA21CFA685008CF0BC /* Find_NearUITests.swift */; };
+		17711FEA21CFA996008CF0BC /* VenueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FE921CFA996008CF0BC /* VenueListViewController.swift */; };
+		17711FED21CFA9BE008CF0BC /* VenueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FEC21CFA9BE008CF0BC /* VenueListViewModel.swift */; };
+		17711FF221CFAB72008CF0BC /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FF121CFAB72008CF0BC /* Venue.swift */; };
+		17711FF421CFB07C008CF0BC /* VenueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FF321CFB07C008CF0BC /* VenueProvider.swift */; };
+		17711FF721CFB0E0008CF0BC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FF621CFB0E0008CF0BC /* Result.swift */; };
+		17711FF921CFB46B008CF0BC /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FF821CFB46B008CF0BC /* VenueTableViewCell.swift */; };
+		17711FFC21D05B67008CF0BC /* VenueSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FFB21D05B67008CF0BC /* VenueSourceAdapter.swift */; };
+		17711FFE21D064D7008CF0BC /* RemoteVenueSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17711FFD21D064D7008CF0BC /* RemoteVenueSourceAdapter.swift */; };
+		1771200121D06DD9008CF0BC /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200021D06DD9008CF0BC /* WebServiceClient.swift */; };
+		1771200321D07325008CF0BC /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200221D07325008CF0BC /* AlamofireClient.swift */; };
+		1771200521D07D0E008CF0BC /* ConfigurationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200421D07D0E008CF0BC /* ConfigurationValues.swift */; };
+		BE9047C61D5392D3F65FFB2A /* Pods_Find_NearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A625622BA5B367F7F7683E /* Pods_Find_NearTests.framework */; };
+		CBA3E49FCEA858C391CC32F5 /* Pods_Find_NearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4B9912BF9D8D02C44A5B4B /* Pods_Find_NearUITests.framework */; };
+		D198B3E22EF516F14B0C6B4F /* Pods_Find_Near.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20199C4F3B16C8CE258FD1C1 /* Pods_Find_Near.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17711FCC21CFA685008CF0BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17711FAF21CFA683008CF0BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17711FB621CFA683008CF0BC;
+			remoteInfo = "Find Near";
+		};
+		17711FD721CFA685008CF0BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17711FAF21CFA683008CF0BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17711FB621CFA683008CF0BC;
+			remoteInfo = "Find Near";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17711FB721CFA683008CF0BC /* Find Near.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Near.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17711FBA21CFA683008CF0BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17711FBF21CFA683008CF0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17711FC121CFA685008CF0BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17711FC421CFA685008CF0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17711FC621CFA685008CF0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17711FCB21CFA685008CF0BC /* Find NearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find NearTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17711FCF21CFA685008CF0BC /* Find_NearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_NearTests.swift; sourceTree = "<group>"; };
+		17711FD121CFA685008CF0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17711FD621CFA685008CF0BC /* Find NearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find NearUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17711FDA21CFA685008CF0BC /* Find_NearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_NearUITests.swift; sourceTree = "<group>"; };
+		17711FDC21CFA685008CF0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17711FE921CFA996008CF0BC /* VenueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewController.swift; sourceTree = "<group>"; };
+		17711FEC21CFA9BE008CF0BC /* VenueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModel.swift; sourceTree = "<group>"; };
+		17711FF121CFAB72008CF0BC /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		17711FF321CFB07C008CF0BC /* VenueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueProvider.swift; sourceTree = "<group>"; };
+		17711FF621CFB0E0008CF0BC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		17711FF821CFB46B008CF0BC /* VenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		17711FFB21D05B67008CF0BC /* VenueSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSourceAdapter.swift; sourceTree = "<group>"; };
+		17711FFD21D064D7008CF0BC /* RemoteVenueSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVenueSourceAdapter.swift; sourceTree = "<group>"; };
+		1771200021D06DD9008CF0BC /* WebServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
+		1771200221D07325008CF0BC /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		1771200421D07D0E008CF0BC /* ConfigurationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationValues.swift; sourceTree = "<group>"; };
+		20199C4F3B16C8CE258FD1C1 /* Pods_Find_Near.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Near.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4B9912BF9D8D02C44A5B4B /* Pods_Find_NearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_NearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D22558AF96A555075581782 /* Pods-Find NearTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find NearTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find NearTests/Pods-Find NearTests.release.xcconfig"; sourceTree = "<group>"; };
+		A43E3AEA485C7D003F1BF4A8 /* Pods-Find Near.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Near.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find Near/Pods-Find Near.debug.xcconfig"; sourceTree = "<group>"; };
+		B6A625622BA5B367F7F7683E /* Pods_Find_NearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_NearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B6B3BA296F8FF08CD4C077 /* Pods-Find NearUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find NearUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find NearUITests/Pods-Find NearUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0C194E521F38CAF89792459 /* Pods-Find NearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find NearUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find NearUITests/Pods-Find NearUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F694578BC679D475B164E95F /* Pods-Find Near.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Near.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find Near/Pods-Find Near.release.xcconfig"; sourceTree = "<group>"; };
+		F802B1109BE2931A53E1214B /* Pods-Find NearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find NearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find NearTests/Pods-Find NearTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17711FB421CFA683008CF0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D198B3E22EF516F14B0C6B4F /* Pods_Find_Near.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FC821CFA685008CF0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE9047C61D5392D3F65FFB2A /* Pods_Find_NearTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FD321CFA685008CF0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA3E49FCEA858C391CC32F5 /* Pods_Find_NearUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17711FAE21CFA683008CF0BC = {
+			isa = PBXGroup;
+			children = (
+				17711FB921CFA683008CF0BC /* Find Near */,
+				17711FCE21CFA685008CF0BC /* Find NearTests */,
+				17711FD921CFA685008CF0BC /* Find NearUITests */,
+				17711FB821CFA683008CF0BC /* Products */,
+				EF0D99098EF90DF55EA195B9 /* Pods */,
+				31954DBCD6274A9097A1BB94 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		17711FB821CFA683008CF0BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17711FB721CFA683008CF0BC /* Find Near.app */,
+				17711FCB21CFA685008CF0BC /* Find NearTests.xctest */,
+				17711FD621CFA685008CF0BC /* Find NearUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17711FB921CFA683008CF0BC /* Find Near */ = {
+			isa = PBXGroup;
+			children = (
+				17711FF521CFB0D0008CF0BC /* Helpers */,
+				17711FF021CFAB18008CF0BC /* Providers */,
+				17711FEF21CFAB0B008CF0BC /* Services */,
+				17711FEE21CFAB04008CF0BC /* Data */,
+				17711FE821CFA950008CF0BC /* UI */,
+				17711FBA21CFA683008CF0BC /* AppDelegate.swift */,
+				17711FBE21CFA683008CF0BC /* Main.storyboard */,
+				17711FC121CFA685008CF0BC /* Assets.xcassets */,
+				17711FC321CFA685008CF0BC /* LaunchScreen.storyboard */,
+				17711FC621CFA685008CF0BC /* Info.plist */,
+			);
+			path = "Find Near";
+			sourceTree = "<group>";
+		};
+		17711FCE21CFA685008CF0BC /* Find NearTests */ = {
+			isa = PBXGroup;
+			children = (
+				17711FCF21CFA685008CF0BC /* Find_NearTests.swift */,
+				17711FD121CFA685008CF0BC /* Info.plist */,
+			);
+			path = "Find NearTests";
+			sourceTree = "<group>";
+		};
+		17711FD921CFA685008CF0BC /* Find NearUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17711FDA21CFA685008CF0BC /* Find_NearUITests.swift */,
+				17711FDC21CFA685008CF0BC /* Info.plist */,
+			);
+			path = "Find NearUITests";
+			sourceTree = "<group>";
+		};
+		17711FE821CFA950008CF0BC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				17711FEB21CFA9A4008CF0BC /* VenueList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		17711FEB21CFA9A4008CF0BC /* VenueList */ = {
+			isa = PBXGroup;
+			children = (
+				17711FE921CFA996008CF0BC /* VenueListViewController.swift */,
+				17711FEC21CFA9BE008CF0BC /* VenueListViewModel.swift */,
+				17711FF821CFB46B008CF0BC /* VenueTableViewCell.swift */,
+			);
+			path = VenueList;
+			sourceTree = "<group>";
+		};
+		17711FEE21CFAB04008CF0BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				17711FF121CFAB72008CF0BC /* Venue.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		17711FEF21CFAB0B008CF0BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				17711FFF21D06B51008CF0BC /* Web */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		17711FF021CFAB18008CF0BC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				17711FFA21D05B44008CF0BC /* Venue */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		17711FF521CFB0D0008CF0BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17711FF621CFB0E0008CF0BC /* Result.swift */,
+				1771200421D07D0E008CF0BC /* ConfigurationValues.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		17711FFA21D05B44008CF0BC /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				17711FF321CFB07C008CF0BC /* VenueProvider.swift */,
+				17711FFB21D05B67008CF0BC /* VenueSourceAdapter.swift */,
+				17711FFD21D064D7008CF0BC /* RemoteVenueSourceAdapter.swift */,
+			);
+			path = Venue;
+			sourceTree = "<group>";
+		};
+		17711FFF21D06B51008CF0BC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				1771200021D06DD9008CF0BC /* WebServiceClient.swift */,
+				1771200221D07325008CF0BC /* AlamofireClient.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		31954DBCD6274A9097A1BB94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20199C4F3B16C8CE258FD1C1 /* Pods_Find_Near.framework */,
+				B6A625622BA5B367F7F7683E /* Pods_Find_NearTests.framework */,
+				2E4B9912BF9D8D02C44A5B4B /* Pods_Find_NearUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF0D99098EF90DF55EA195B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A43E3AEA485C7D003F1BF4A8 /* Pods-Find Near.debug.xcconfig */,
+				F694578BC679D475B164E95F /* Pods-Find Near.release.xcconfig */,
+				F802B1109BE2931A53E1214B /* Pods-Find NearTests.debug.xcconfig */,
+				4D22558AF96A555075581782 /* Pods-Find NearTests.release.xcconfig */,
+				E5B6B3BA296F8FF08CD4C077 /* Pods-Find NearUITests.debug.xcconfig */,
+				F0C194E521F38CAF89792459 /* Pods-Find NearUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17711FB621CFA683008CF0BC /* Find Near */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17711FDF21CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find Near" */;
+			buildPhases = (
+				36968D854BF10905EB9A729F /* [CP] Check Pods Manifest.lock */,
+				17711FB321CFA683008CF0BC /* Sources */,
+				17711FB421CFA683008CF0BC /* Frameworks */,
+				17711FB521CFA683008CF0BC /* Resources */,
+				5FD8A0F3F2C98F5E7E7C2F1E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Find Near";
+			productName = "Find Near";
+			productReference = 17711FB721CFA683008CF0BC /* Find Near.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17711FCA21CFA685008CF0BC /* Find NearTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17711FE221CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find NearTests" */;
+			buildPhases = (
+				90253BAC82F60CC2AC2EA49A /* [CP] Check Pods Manifest.lock */,
+				17711FC721CFA685008CF0BC /* Sources */,
+				17711FC821CFA685008CF0BC /* Frameworks */,
+				17711FC921CFA685008CF0BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17711FCD21CFA685008CF0BC /* PBXTargetDependency */,
+			);
+			name = "Find NearTests";
+			productName = "Find NearTests";
+			productReference = 17711FCB21CFA685008CF0BC /* Find NearTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17711FD521CFA685008CF0BC /* Find NearUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17711FE521CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find NearUITests" */;
+			buildPhases = (
+				C6983F37F99D33200A659B14 /* [CP] Check Pods Manifest.lock */,
+				17711FD221CFA685008CF0BC /* Sources */,
+				17711FD321CFA685008CF0BC /* Frameworks */,
+				17711FD421CFA685008CF0BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17711FD821CFA685008CF0BC /* PBXTargetDependency */,
+			);
+			name = "Find NearUITests";
+			productName = "Find NearUITests";
+			productReference = 17711FD621CFA685008CF0BC /* Find NearUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17711FAF21CFA683008CF0BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = JHK_Development;
+				TargetAttributes = {
+					17711FB621CFA683008CF0BC = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					17711FCA21CFA685008CF0BC = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 17711FB621CFA683008CF0BC;
+					};
+					17711FD521CFA685008CF0BC = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 17711FB621CFA683008CF0BC;
+					};
+				};
+			};
+			buildConfigurationList = 17711FB221CFA683008CF0BC /* Build configuration list for PBXProject "Find Near" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17711FAE21CFA683008CF0BC;
+			productRefGroup = 17711FB821CFA683008CF0BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17711FB621CFA683008CF0BC /* Find Near */,
+				17711FCA21CFA685008CF0BC /* Find NearTests */,
+				17711FD521CFA685008CF0BC /* Find NearUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17711FB521CFA683008CF0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17711FC521CFA685008CF0BC /* LaunchScreen.storyboard in Resources */,
+				17711FC221CFA685008CF0BC /* Assets.xcassets in Resources */,
+				17711FC021CFA683008CF0BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FC921CFA685008CF0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FD421CFA685008CF0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36968D854BF10905EB9A729F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find Near-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FD8A0F3F2C98F5E7E7C2F1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Find Near/Pods-Find Near-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find Near/Pods-Find Near-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90253BAC82F60CC2AC2EA49A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find NearTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6983F37F99D33200A659B14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find NearUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17711FB321CFA683008CF0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17711FFC21D05B67008CF0BC /* VenueSourceAdapter.swift in Sources */,
+				17711FF921CFB46B008CF0BC /* VenueTableViewCell.swift in Sources */,
+				1771200521D07D0E008CF0BC /* ConfigurationValues.swift in Sources */,
+				17711FF721CFB0E0008CF0BC /* Result.swift in Sources */,
+				17711FFE21D064D7008CF0BC /* RemoteVenueSourceAdapter.swift in Sources */,
+				17711FEA21CFA996008CF0BC /* VenueListViewController.swift in Sources */,
+				17711FF421CFB07C008CF0BC /* VenueProvider.swift in Sources */,
+				17711FF221CFAB72008CF0BC /* Venue.swift in Sources */,
+				1771200121D06DD9008CF0BC /* WebServiceClient.swift in Sources */,
+				1771200321D07325008CF0BC /* AlamofireClient.swift in Sources */,
+				17711FBB21CFA683008CF0BC /* AppDelegate.swift in Sources */,
+				17711FED21CFA9BE008CF0BC /* VenueListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FC721CFA685008CF0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17711FD021CFA685008CF0BC /* Find_NearTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17711FD221CFA685008CF0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17711FDB21CFA685008CF0BC /* Find_NearUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17711FCD21CFA685008CF0BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17711FB621CFA683008CF0BC /* Find Near */;
+			targetProxy = 17711FCC21CFA685008CF0BC /* PBXContainerItemProxy */;
+		};
+		17711FD821CFA685008CF0BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17711FB621CFA683008CF0BC /* Find Near */;
+			targetProxy = 17711FD721CFA685008CF0BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17711FBE21CFA683008CF0BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17711FBF21CFA683008CF0BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17711FC321CFA685008CF0BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17711FC421CFA685008CF0BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17711FDD21CFA685008CF0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17711FDE21CFA685008CF0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17711FE021CFA685008CF0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43E3AEA485C7D003F1BF4A8 /* Pods-Find Near.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find Near/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-Near";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17711FE121CFA685008CF0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F694578BC679D475B164E95F /* Pods-Find Near.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find Near/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-Near";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		17711FE321CFA685008CF0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F802B1109BE2931A53E1214B /* Pods-Find NearTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find NearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-NearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find Near.app/Find Near";
+			};
+			name = Debug;
+		};
+		17711FE421CFA685008CF0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D22558AF96A555075581782 /* Pods-Find NearTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find NearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-NearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find Near.app/Find Near";
+			};
+			name = Release;
+		};
+		17711FE621CFA685008CF0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B6B3BA296F8FF08CD4C077 /* Pods-Find NearUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find NearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-NearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Find Near";
+			};
+			name = Debug;
+		};
+		17711FE721CFA685008CF0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C194E521F38CAF89792459 /* Pods-Find NearUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D684833V59;
+				INFOPLIST_FILE = "Find NearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhk.Find-NearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Find Near";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17711FB221CFA683008CF0BC /* Build configuration list for PBXProject "Find Near" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17711FDD21CFA685008CF0BC /* Debug */,
+				17711FDE21CFA685008CF0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17711FDF21CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find Near" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17711FE021CFA685008CF0BC /* Debug */,
+				17711FE121CFA685008CF0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17711FE221CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find NearTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17711FE321CFA685008CF0BC /* Debug */,
+				17711FE421CFA685008CF0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17711FE521CFA685008CF0BC /* Build configuration list for PBXNativeTarget "Find NearUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17711FE621CFA685008CF0BC /* Debug */,
+				17711FE721CFA685008CF0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17711FAF21CFA683008CF0BC /* Project object */;
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Venue List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VenueListViewController" customModule="Find_Near" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXn-Z1-FPe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.91764705879999997" green="0.2156862745" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="yVM-F9-fh3"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="43W-5P-Gyl"/>
+                                </connections>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-Wb-p3w">
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="venueCell" id="GWt-ON-7u6">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GWt-ON-7u6" id="gSg-jP-b8Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wlL-ed-jzL">
+                                <rect key="frame" x="8" y="86" width="359" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Coffee Shops"/>
+                                    <segment title="Restaurants"/>
+                                    <segment title="Bars"/>
+                                </segments>
+                                <color key="tintColor" red="0.91582280397415161" green="0.21454930305480957" blue="0.20568794012069702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changedVenueCategory:" destination="BYZ-38-t0r" eventType="valueChanged" id="fp9-8A-TW4"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OXn-Z1-FPe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Cs-D7-ofE"/>
+                            <constraint firstItem="OXn-Z1-FPe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ccj-2W-apm"/>
+                            <constraint firstItem="OXn-Z1-FPe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ho3-W4-yXu"/>
+                            <constraint firstItem="a8t-Wb-p3w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IMJ-Zg-qPE"/>
+                            <constraint firstItem="a8t-Wb-p3w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wjl-iU-GeP"/>
+                            <constraint firstItem="a8t-Wb-p3w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="afH-dh-IbZ"/>
+                            <constraint firstItem="wlL-ed-jzL" firstAttribute="top" secondItem="OXn-Z1-FPe" secondAttribute="bottom" constant="22" id="glE-kU-ihh"/>
+                            <constraint firstAttribute="trailing" secondItem="wlL-ed-jzL" secondAttribute="trailing" constant="8" id="jXq-2F-LRo"/>
+                            <constraint firstItem="wlL-ed-jzL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qJB-6c-tQl"/>
+                            <constraint firstItem="a8t-Wb-p3w" firstAttribute="top" secondItem="wlL-ed-jzL" secondAttribute="bottom" constant="8" id="qOD-sD-YYz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="naviItem" destination="yVM-F9-fh3" id="uZf-e5-dAt"/>
+                        <outlet property="tableView" destination="a8t-Wb-p3w" id="n3v-ou-ecw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>

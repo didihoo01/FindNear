@@ -1,0 +1,6 @@
+framework module Pods_Find_NearUITests {
+  umbrella header "Pods-Find NearUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
