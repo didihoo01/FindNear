@@ -16,9 +16,9 @@ enum VenueCategory: CustomStringConvertible {
         case .coffeeShop:
             return "4bf58dd8d48988d1e0931735"
         case .restaurant:
-            return "4d4b7105d754a06374d81259"
+            return ConfigurationValues.retaurantsCategoryIDs
         case .bar:
-            return "4bf58dd8d48988d116941735"
+            return ConfigurationValues.barsCategoryIDs
         }
     }
 }

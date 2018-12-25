@@ -12,8 +12,8 @@ typealias VenueOptions = [String: String]
 
 final class VenueListViewModel {
     fileprivate var venues = [Venue]()
-    
-    // Default venue option, it should react to the changes made by the user
+    fileprivate var cachedVenuesMap = [String: [Venue]]()
+    // Default venue option, it should react to the changes made by the user via UI
     // It will also support addtional options
     // Set defaultRadius to 1 mile, whichs about 1610 meters
     var options = ["categoryId": VenueCategory.coffeeShop.description,
@@ -45,14 +45,38 @@ final class VenueListViewModel {
     }
 
     func searchVenues(completionOn queue: DispatchQueue = DispatchQueue.main, completion: @escaping (Error?) -> Void) {
-        VenueProvider.shared.getTopVenues(with: options, completionOn: queue) { [weak self] (result) in
-            switch result {
-            case .success(let venues):
-                self?.venues = venues
-                completion(nil)
-            case .failure(let error):
-                self?.venues = []
-                completion(error)
+        guard
+            let near = options["near"],
+            let categoryId = options["categoryId"] else {
+                queue.async { completion(VenueError.notFound) }
+                return
+            }
+        if let cachedVenue = cachedVenuesMap[near+categoryId] {
+            venues = cachedVenue
+            queue.async { completion(nil) }
+        }
+        else {
+//            VenueProvider.shared.getVenues(with: options, completionOn: queue) { [weak self] (result) in
+//                switch result {
+//                case .success(let venues):
+//                    self?.venues = venues
+//                    self?.cachedVenuesMap[near+categoryId] = venues
+//                    completion(nil)
+//                case .failure(let error):
+//                    self?.venues = []
+//                    completion(error)
+//                }
+//            }
+            VenueProvider.shared.getTopVenues(with: options, completionOn: queue) { [weak self] (result) in
+                switch result {
+                case .success(let venues):
+                    self?.venues = venues
+                    self?.cachedVenuesMap[near+categoryId] = venues
+                    completion(nil)
+                case .failure(let error):
+                    self?.venues = []
+                    completion(error)
+                }
             }
         }
     }

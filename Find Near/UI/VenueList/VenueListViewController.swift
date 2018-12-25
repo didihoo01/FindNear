@@ -21,6 +21,7 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         setupSearchBar()
         prepareDefaultLocationForEnvoy()
     }
@@ -89,10 +90,9 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
             if let error = error {
                 NSLog(error.localizedDescription)
             }
-            else {
-                self?.tableView.reloadData()
-            }
             self?.userInput(shouldEnable: true)
+            self?.tableView.reloadData()
+            self?.tableView.scroll(to: .top, animated: true)
         }
     }
     
@@ -106,6 +106,7 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
         let envoyAddress = "410 Townsend St, San Francisco, CA"
         searchBar.text = envoyAddress
         viewModel.updateSearchVenueAddress(to: envoyAddress)
+        searchVenues()
     }
 }
 
@@ -117,6 +118,44 @@ extension VenueListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let venueCell = tableView.dequeueReusableCell(withIdentifier: "venueCell", for: indexPath) as? VenueTableViewCell else { fatalError("failed to load venueCell")}
+        let venue = viewModel.venue(at: indexPath.item)
+        venueCell.configure(for: venue)
         return venueCell
+    }
+}
+
+extension UITableView {
+    
+    public func reloadData(_ completion: @escaping ()->()) {
+        UIView.animate(withDuration: 0, animations: {
+            self.reloadData()
+        }, completion:{ _ in
+            completion()
+        })
+    }
+    
+    func scroll(to: scrollsTo, animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            let numberOfSections = self.numberOfSections
+            let numberOfRows = self.numberOfRows(inSection: numberOfSections-1)
+            switch to{
+            case .top:
+                if numberOfRows > 0 {
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    self.scrollToRow(at: indexPath, at: .top, animated: animated)
+                }
+                break
+            case .bottom:
+                if numberOfRows > 0 {
+                    let indexPath = IndexPath(row: numberOfRows-1, section: (numberOfSections-1))
+                    self.scrollToRow(at: indexPath, at: .bottom, animated: animated)
+                }
+                break
+            }
+        }
+    }
+    
+    enum scrollsTo {
+        case top,bottom
     }
 }

@@ -13,4 +13,9 @@ struct ConfigurationValues {
     static let fourSquareVenueEndPoint = "https://api.foursquare.com/v2/venues"
     static let fourSquareAPIVersion = 20181231
     static let fourSquareDefaultVenueRadius = 1610
+    
+    // Venue Category IDs
+    static let barsCategoryIDs = "52e81612bcbc57f1066b7a0d,56aa371ce4b08b9a8d57356c,52e81612bcbc57f1066b7a0e,4bf58dd8d48988d11e941735"
+    
+    static let retaurantsCategoryIDs = "4bf58dd8d48988d14e941735,4bf58dd8d48988d142941735,4bf58dd8d48988d16a941735,52e81612bcbc57f1066b79f1,4bf58dd8d48988d143941735,4bf58dd8d48988d16c941735,4bf58dd8d48988d16d941735"
 }
