@@ -27,8 +27,8 @@ struct Venue {
     let id: String
     let name: String
     let address: String
-    let rating: Float?
-    let photoUrl: String?
+    let rating: Double
+    let photoUrl: String
     
     static func createVenue(from result: WebServiceResult) -> Venue? {
         guard
@@ -36,7 +36,7 @@ struct Venue {
             let name = result["name"] as? String,
             let location = result["location"] as? WebServiceResult,
             let address = location["address"] as? String else { return nil}
-        return Venue(id: id, name: name, address: address, rating: nil, photoUrl: nil)
+        return Venue(id: id, name: name, address: address, rating: 0, photoUrl: "")
     }
     
     static func createDetailVenue(from result: WebServiceResult) -> Venue? {
@@ -45,12 +45,12 @@ struct Venue {
             let name = result["name"] as? String,
             let location = result["location"] as? WebServiceResult,
             let address = location["address"] as? String,
-            let rating = result["rating"] as? Float,
+            let rating = result["rating"] as? Double,
             let bestPhoto = result["bestPhoto"] as? WebServiceResult,
             let photoPrefix = bestPhoto["prefix"] as? String,
-            let photoSuffix = bestPhoto["suffix"] as? Int,
+            let photoSuffix = bestPhoto["suffix"] as? String,
             let photoWidth = bestPhoto["width"] as? Int,
-            let photoHeight = bestPhoto["height"] as? Int else { return nil}
+            let photoHeight = bestPhoto["height"] as? Int else { return nil }
         let photoUrl = "\(photoPrefix)\(photoWidth)x\(photoHeight)\(photoSuffix)"
         return Venue(id: id, name: name, address: address, rating: rating, photoUrl: photoUrl)
     }

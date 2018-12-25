@@ -8,8 +8,21 @@
 
 import Foundation
 
+typealias VenueOptions = [String: String]
+
 final class VenueListViewModel {
     fileprivate var venues = [Venue]()
+    
+    // Default venue option, it should react to the changes made by the user
+    // It will also support addtional options
+    // Set defaultRadius to 1 mile, whichs about 1610 meters
+    var options = ["categoryId": VenueCategory.coffeeShop.description,
+                   "intent": "checkin",
+                   "client_id": ConfigurationValues.fourSquareClientID,
+                   "client_secret": ConfigurationValues.fourSquareClientSecret,
+                   "v": "\(ConfigurationValues.fourSquareAPIVersion)",
+                   "radius": "\(ConfigurationValues.fourSquareDefaultVenueRadius)"]
+
     // Set default venue category to coffee shop
     fileprivate var venueCategory: VenueCategory = .coffeeShop
     fileprivate var searchVenueAddress: String = ""
@@ -24,15 +37,15 @@ final class VenueListViewModel {
     }
     
     func updateVenueCategory(to category: VenueCategory) {
-        venueCategory = category
+        options["categoryId"] = category.description
     }
     
     func updateSearchVenueAddress(to address: String) {
-        searchVenueAddress = address
+        options["near"] = address
     }
 
     func searchVenues(completionOn queue: DispatchQueue = DispatchQueue.main, completion: @escaping (Error?) -> Void) {
-        VenueProvider.shared.getVenues(for: venueCategory, near: searchVenueAddress, completionOn: queue) {[weak self] (result) in
+        VenueProvider.shared.getTopVenues(with: options, completionOn: queue) { [weak self] (result) in
             switch result {
             case .success(let venues):
                 self?.venues = venues

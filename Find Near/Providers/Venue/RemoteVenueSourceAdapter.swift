@@ -17,24 +17,16 @@ final class RemoteVenueSourceAdapter: VenueSourceAdapter {
     }
     
     // This remote adapter API has dependencies on the foursquare venue API, consider changing its implementation when switching to a different API vendor
-    func getVenues(for venueCategory: VenueCategory, near address: String, within radius: Int, completionOn queue: DispatchQueue, completion: @escaping (VenuesResult) -> Void) {
+    func getVenues(with options: Params, completionOn queue: DispatchQueue, completion: @escaping (VenuesResult) -> Void) {
         
         guard let url = URL(string: venueAPIBaseURL.appending("/search")) else {
             queue.async { completion(.failure(.unknown)) }
             return
         }
-        // Set defaultRadius to 1 mile, whichs about 1610 meters
-        let params: Params = ["near": address,
-                              "intent": "checkin",
-                              "client_id": ConfigurationValues.fourSquareClientID,
-                              "client_secret": ConfigurationValues.fourSquareClientSecret,
-                              "v": ConfigurationValues.fourSquareAPIVersion,
-                              "categoryId": venueCategory.description,
-                              "radius": "\(radius)"]
         
         let headers = ["Content-Type": "application/json"]
         
-        webServiceClient.get(url: url, with: params, headers: headers, queue: queue) { (result, error) in
+        webServiceClient.get(url: url, with: options, headers: headers, queue: queue) { (result, error) in
             guard
                 let searchResult = result,
                 let response = searchResult["response"] as? WebServiceResult,
@@ -61,7 +53,7 @@ final class RemoteVenueSourceAdapter: VenueSourceAdapter {
         
         let params: Params = ["client_id": ConfigurationValues.fourSquareClientID,
                               "client_secret": ConfigurationValues.fourSquareClientSecret,
-                              "v": ConfigurationValues.fourSquareAPIVersion]
+                              "v": "\(ConfigurationValues.fourSquareAPIVersion)"]
 
         let headers = ["Content-Type": "application/json"]
 

@@ -8,10 +8,9 @@
 
 import Foundation
 struct ConfigurationValues {
-    static let fourSquareClientID = "VTAR3SBXGIHXGBQBM1Y0UW3ROLVQYSV5PNZO3RJB13HVSWRR"
-    static let fourSquareClientSecret = "I5VXXOYQEDZPWVQLAO0OAUZBFD40MOJPPGX1RP13UVEFMZAC"
+    static let fourSquareClientID = "5HFHNVUHCGLGJVI2ZRJDOH2SSNK2ELKLU2Z3EEZVVDLMVDAB"
+    static let fourSquareClientSecret = "DYW0KZPYKMER4JS3QFBDREFBV22KABPHDE2TZZLLUFBHPZUS"
     static let fourSquareVenueEndPoint = "https://api.foursquare.com/v2/venues"
-    static let fourSquareAPIVersion = "20181231"
+    static let fourSquareAPIVersion = 20181231
     static let fourSquareDefaultVenueRadius = 1610
-
 }

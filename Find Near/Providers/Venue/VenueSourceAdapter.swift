@@ -20,7 +20,7 @@ typealias VenueResult = Result<Venue, VenueError>
 typealias VenueId = String
 
 protocol VenueSourceAdapter {
-    func getVenues(for venueCategory: VenueCategory, near address: String, within radius: Int, completionOn queue: DispatchQueue, completion: @escaping (VenuesResult) -> Void)
+    func getVenues(with options: Params, completionOn queue: DispatchQueue, completion: @escaping (VenuesResult) -> Void)
     
     func getVenue(id venueId: VenueId, completionOn queue: DispatchQueue, completion: @escaping (VenueResult) -> Void)
 }

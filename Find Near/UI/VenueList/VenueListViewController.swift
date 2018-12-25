@@ -13,6 +13,7 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
     // UI elements
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var naviItem: UINavigationItem!
+    @IBOutlet weak var venueCategorySegmentedControl: UISegmentedControl!
     lazy var searchBar = UISearchBar(frame: CGRect.zero)
     
     // Logic Componenets
@@ -21,7 +22,7 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
-        searchBar.text = "410 Townsend St, San Francisco, CA"
+        prepareDefaultLocationForEnvoy()
     }
     
     // MARK: UI configurations
@@ -78,8 +79,9 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchVenues()
         searchBar.resignFirstResponder()
+        userInput(shouldEnable: false)
+        searchVenues()
     }
     
     fileprivate func searchVenues() {
@@ -90,7 +92,20 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
             else {
                 self?.tableView.reloadData()
             }
+            self?.userInput(shouldEnable: true)
         }
+    }
+    
+    fileprivate func userInput(shouldEnable: Bool) {
+        searchBar.isUserInteractionEnabled = shouldEnable
+        venueCategorySegmentedControl.isUserInteractionEnabled = shouldEnable
+    }
+    
+    // For Evoy only
+    fileprivate func prepareDefaultLocationForEnvoy() {
+        let envoyAddress = "410 Townsend St, San Francisco, CA"
+        searchBar.text = envoyAddress
+        viewModel.updateSearchVenueAddress(to: envoyAddress)
     }
 }
 

@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="naviItem" destination="yVM-F9-fh3" id="uZf-e5-dAt"/>
                         <outlet property="tableView" destination="a8t-Wb-p3w" id="n3v-ou-ecw"/>
+                        <outlet property="venueCategorySegmentedControl" destination="wlL-ed-jzL" id="Hd8-sK-jR2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
