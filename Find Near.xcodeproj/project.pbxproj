@@ -24,6 +24,7 @@
 		1771200321D07325008CF0BC /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200221D07325008CF0BC /* AlamofireClient.swift */; };
 		1771200521D07D0E008CF0BC /* ConfigurationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200421D07D0E008CF0BC /* ConfigurationValues.swift */; };
 		1771200721D211BF008CF0BC /* VenueListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200621D211BF008CF0BC /* VenueListViewModelTests.swift */; };
+		1771200B21D2257D008CF0BC /* VenueProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771200A21D2257D008CF0BC /* VenueProviderTests.swift */; };
 		BE9047C61D5392D3F65FFB2A /* Pods_Find_NearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A625622BA5B367F7F7683E /* Pods_Find_NearTests.framework */; };
 		CBA3E49FCEA858C391CC32F5 /* Pods_Find_NearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4B9912BF9D8D02C44A5B4B /* Pods_Find_NearUITests.framework */; };
 		D198B3E22EF516F14B0C6B4F /* Pods_Find_Near.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20199C4F3B16C8CE258FD1C1 /* Pods_Find_Near.framework */; };
@@ -70,6 +71,7 @@
 		1771200221D07325008CF0BC /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
 		1771200421D07D0E008CF0BC /* ConfigurationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationValues.swift; sourceTree = "<group>"; };
 		1771200621D211BF008CF0BC /* VenueListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModelTests.swift; sourceTree = "<group>"; };
+		1771200A21D2257D008CF0BC /* VenueProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueProviderTests.swift; sourceTree = "<group>"; };
 		20199C4F3B16C8CE258FD1C1 /* Pods_Find_Near.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Near.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4B9912BF9D8D02C44A5B4B /* Pods_Find_NearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_NearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D22558AF96A555075581782 /* Pods-Find NearTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find NearTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find NearTests/Pods-Find NearTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				1771200621D211BF008CF0BC /* VenueListViewModelTests.swift */,
+				1771200A21D2257D008CF0BC /* VenueProviderTests.swift */,
 				17711FD121CFA685008CF0BC /* Info.plist */,
 			);
 			path = "Find NearTests";
@@ -490,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1771200B21D2257D008CF0BC /* VenueProviderTests.swift in Sources */,
 				1771200721D211BF008CF0BC /* VenueListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

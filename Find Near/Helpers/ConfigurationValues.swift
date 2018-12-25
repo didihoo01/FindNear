@@ -12,6 +12,7 @@ struct ConfigurationValues {
     static let fourSquareClientSecret = "DYW0KZPYKMER4JS3QFBDREFBV22KABPHDE2TZZLLUFBHPZUS"
     static let fourSquareVenueEndPoint = "https://api.foursquare.com/v2/venues"
     static let fourSquareAPIVersion = 20181231
+    // About 1 mile
     static let fourSquareDefaultVenueRadius = 1610
     
     // Venue Category IDs
