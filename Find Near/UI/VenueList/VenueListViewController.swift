@@ -23,7 +23,7 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         setupSearchBar()
-        prepareDefaultLocationForEnvoy()
+//        prepareDefaultLocationForEnvoy()
     }
     
     // MARK: UI configurations
