@@ -23,7 +23,7 @@ enum VenueCategory: CustomStringConvertible {
     }
 }
 
-struct Venue {
+struct Venue: Equatable {
     let id: String
     let name: String
     let address: String
@@ -53,6 +53,15 @@ struct Venue {
             let photoHeight = bestPhoto["height"] as? Int else { return nil }
         let photoUrl = "\(photoPrefix)\(photoWidth)x\(photoHeight)\(photoSuffix)"
         return Venue(id: id, name: name, address: address, rating: rating, photoUrl: photoUrl)
+    }
+    
+    static func == (lhs: Venue, rhs: Venue) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.address == rhs.address &&
+            lhs.rating == rhs.rating &&
+            lhs.photoUrl == rhs.photoUrl
     }
 
 }

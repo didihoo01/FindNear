@@ -87,10 +87,10 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
     
     fileprivate func searchVenues() {
         viewModel.searchVenues { [weak self] (error) in
-            if let error = error {
-                NSLog(error.localizedDescription)
-            }
             self?.userInput(shouldEnable: true)
+            if let error = error {
+                self?.presentAlert(for: error)
+            }
             self?.tableView.reloadData()
             self?.tableView.scroll(to: .top, animated: true)
         }
@@ -101,12 +101,34 @@ class VenueListViewController: UIViewController, UIBarPositioningDelegate, UISea
         venueCategorySegmentedControl.isUserInteractionEnabled = shouldEnable
     }
     
-    // For Evoy only
+    // Default setup for Evoy
     fileprivate func prepareDefaultLocationForEnvoy() {
         let envoyAddress = "410 Townsend St, San Francisco, CA"
         searchBar.text = envoyAddress
         viewModel.updateSearchVenueAddress(to: envoyAddress)
         searchVenues()
+    }
+    
+    // Present an alert when encounter an error
+    // FIXME: When error cases become more complicated, consider moving the alert hanlder into an view controller extension with better error title and description generations (e.g. using a factory mechanism in the case to support multi-lanaguage for internationalization)
+    
+    fileprivate func presentAlert(for error: VenueError) {
+        var title = "Something Something went wrong wrong"
+        var description = "Please try again later."
+        
+        switch error {
+        case .notFound:
+            if let address = viewModel.searchAddress() {
+                title = "Couldn't find venues for \(address)"
+                description = "Sorry, we failed to find venues near the location you entered. Be sure to enter a right formatted address, for example: 410 Townsend St, San Francisco, CA"
+            }
+        default:
+            break
+        }
+        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 

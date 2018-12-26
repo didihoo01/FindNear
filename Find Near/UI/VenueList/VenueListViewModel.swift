@@ -11,11 +11,20 @@ import Foundation
 typealias VenueOptions = [String: String]
 
 final class VenueListViewModel {
+    
+    // Main data source to drive the venue list
     fileprivate var venues = [Venue]()
+    
+    // Cache map of location+category for the current version
     fileprivate var cachedVenuesMap = [String: [Venue]]()
-    // Default venue option, it should react to the changes made by the user via UI
-    // It will also support addtional options
+    
+    // Default venue option, it should react to the changes made by the user (via UI)
+    // It can also support addtional options
     // Set defaultRadius to 1 mile, whichs about 1610 meters
+    
+    // Note: This option profile is 100% API dependant,
+    // In this case, it is relying on the Foursquare API structures
+    // This pattern allows minimal code changes to a different API vendor and new UI requirements
     var options = ["categoryId": VenueCategory.coffeeShop.description,
                    "intent": "checkin",
                    "client_id": ConfigurationValues.fourSquareClientID,
@@ -43,8 +52,12 @@ final class VenueListViewModel {
     func updateSearchVenueAddress(to address: String) {
         options["near"] = address
     }
+    
+    func searchAddress() -> String? {
+        return options["near"]
+    }
 
-    func searchVenues(completionOn queue: DispatchQueue = DispatchQueue.main, completion: @escaping (Error?) -> Void) {
+    func searchVenues(completionOn queue: DispatchQueue = DispatchQueue.main, completion: @escaping (VenueError?) -> Void) {
         guard
             let near = options["near"],
             let categoryId = options["categoryId"] else {
@@ -56,6 +69,7 @@ final class VenueListViewModel {
             queue.async { completion(nil) }
         }
         else {
+//            // Debug code for UI testings when premium API call quota exceeded limit
 //            VenueProvider.shared.getVenues(with: options, completionOn: queue) { [weak self] (result) in
 //                switch result {
 //                case .success(let venues):
@@ -67,6 +81,7 @@ final class VenueListViewModel {
 //                    completion(error)
 //                }
 //            }
+            
             VenueProvider.shared.getTopVenues(with: options, completionOn: queue) { [weak self] (result) in
                 switch result {
                 case .success(let venues):

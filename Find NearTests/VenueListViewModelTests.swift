@@ -38,7 +38,7 @@ class VenueListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         viewModel.updateSearchVenueAddress(to: invalidLocation)
         viewModel.searchVenues { (error) in
-            if let searchError = error as? VenueError, searchError == VenueError.notFound {
+            if let searchError = error, searchError == VenueError.notFound {
                 expectation.fulfill()
             }
             else{
