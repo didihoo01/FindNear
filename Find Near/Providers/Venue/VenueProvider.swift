@@ -13,7 +13,6 @@ final class VenueProvider {
     static let shared: VenueProvider = VenueProvider()
     fileprivate let remoteVenueSourceAdapter: VenueSourceAdapter
     fileprivate let adapterQueue: DispatchQueue = DispatchQueue(label: "venue.adapter.queue")
-    fileprivate let serialQueue = DispatchQueue(label: "serial.venue.queue")
     
     private init() {
         // Injecting alamofire client into the remote adapter to prevent framework dependencies
